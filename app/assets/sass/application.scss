@@ -1,0 +1,113 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+@import "patterns/related-items";
+@import "patterns/internal";
+@import "patterns/sub-navigation";
+@import "patterns/big-number";
+
+// Style code examples in documentation
+code {
+  @include govuk-font($size: 19);
+  color: #d13118;
+  background-color: govuk-colour("light-grey", $legacy: "grey-4");
+  padding: 0 govuk-spacing(1);
+}
+
+// Additional GOV.UK styles and publisher components
+@import "govuk-publisher-components/all-components";
+@import "govuk/guide";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+// Match header to live service
+.govuk-header__link--service-name {
+  line-height: 1;
+  font-weight: 400;
+  margin: 0 0 0 5px;
+}
+.govuk-header__navigation {
+  @include govuk-media-query ($from: desktop) {
+    text-align: right;
+  }
+}
+
+
+
+// Style the footer phase banner
+.govuk-footer .govuk-phase-banner {
+  padding: 0 0 20px;
+  margin-bottom: 25px;
+}
+
+
+
+// Modify the MOJ side nav
+.moj-side-navigation {
+  position:-webkit-sticky;
+  position:sticky;
+  top:4px;
+  padding: 0 20px 0 0;
+}
+
+.moj-organisation-nav__link:visited {
+  color: #1d70b8;
+}
+
+
+
+
+.data-card {
+  background-color: govuk-colour("light-grey");
+  padding: govuk-spacing(3) govuk-spacing(3) govuk-spacing(1);
+  margin-bottom: govuk-spacing(8);
+  border-bottom: 3px solid govuk-colour("blue");
+
+  .big-number__value {
+    font-size: 48px
+  }
+  .big-number__label {
+    line-height: 1;
+  }
+
+  @include govuk-media-query ($from: desktop) {
+    .big-number__value {
+      font-size: 60px
+    }
+  }
+}
+
+.graphic {
+  width: 100%
+}
+
+.legenditem {
+	float: left;
+}
+
+.legendtext {
+	padding-right: 25px;
+	padding-left: 5px;
+	float: left;
+	font-size: 16px;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+
+}
+
+.legendline {
+	margin-top: 10px;
+	float: left;
+}

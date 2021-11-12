@@ -1,0 +1,30 @@
+<div class="govuk-grid-column-one-quarter">
+
+  {{ mojSideNavigation({
+    label: 'Side navigation',
+    items: [
+      {
+        text: 'Overview',
+        href: '#1',
+        active: true if active == 'overview'
+      },
+      {
+        text: 'Locations',
+        href: '#2'
+      },
+      {
+        text: 'Team members',
+        href: '#3'
+      },
+      {
+        text: 'Settings',
+        href: '#4'
+      },
+      {
+        text: 'Logs',
+        href: '#5'
+      }
+    ]
+  }) }}
+
+</div>

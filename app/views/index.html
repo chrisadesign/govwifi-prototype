@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        GovWifi prototype
+      </h1>
+
+      {{ govukButton({
+        html: 'Admin',
+        href: 'admin/v1/overview'
+      }) }}
+
+      {{ govukButton({
+        html: 'Data',
+        href: 'perf-data/'
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
