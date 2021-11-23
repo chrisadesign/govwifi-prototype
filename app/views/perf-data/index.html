@@ -12,36 +12,32 @@
       <p>Adding a performance page to the public documentation.</p>
 
       <h2 class="govuk-heading-m">
-        Version 1
+        Version 2
       </h2>
 
-      <p class="govuk-!-margin-bottom-2">Two variations of the MVP page:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="v1/performance">no graph</a>
-        </li>
-        <li>
-          <a href="v2/performance">with graph</a>
-        </li>
-      </ul>
+      <h3 class="govuk-heading-s">Changes</h3>
+      <p>Following research we&rsquo;ve moved the performace data on the <i>Offer GovWifi</i> page and removed the map.</p>
+
+      {{ govukButton({
+        text: 'View prototype',
+        href: 'v3/offer-govwifi'
+      }) }}
 
 
 
 
 
 
-      {# {% set v1 %}
-        <h3 class="govuk-heading-s">Changes</h3>
-        <p>Information about this version.</p>
-
-        <h3 class="govuk-heading-s">Research notes</h3>
-        <p>Information about the research.</p>
-        <p><a href="#0">View user research report</a>.<p>
-
-        {{ govukButton({
-          text: 'View prototype',
-          href: 'v1/question'
-        }) }}
+      {% set v1 %}
+        <p class="govuk-!-margin-bottom-2">Two variations of the MVP page:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="v1/performance">no graph</a>
+          </li>
+          <li>
+            <a href="v2/performance">with graph</a>
+          </li>
+        </ul>
       {% endset %}
 
       {{ govukAccordion({
@@ -51,7 +47,7 @@
             content: { html: v1 }
           }
         ]
-      }) }} #}
+      }) }}
 
     </div>
   </div>

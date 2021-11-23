@@ -1,0 +1,211 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Offer GovWifi in your organisation
+      </h1>
+
+      <p>GovWifi lets staff and visitors sign up once and then automatically connect to the wifi in multiple public sector buildings.</p>
+
+      <p>The benefits of using GovWifi are:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>people do not have to sign up for and remember different usernames and passwords for wifi networks in every building they visit</li>
+        <li>people can sign up themselves by sending a text or email - removing admin that your organisation needs to do when expecting visitors</li>
+        <li>it’s more secure than using a single password, or ‘pre-shared key’ for your guest wifi network</li>
+        <li>you set it up over your existing infrastructure, so it’s quick to install</li>
+        <li>it's free</li>
+      </ul>
+
+
+
+
+      <h2 class="govuk-heading-m">What it's for</h2>
+      <p>GovWifi is designed to help users onto guest wifi networks.</p>
+
+      {{ govukInsetText({
+        text: 'If you want to use it as the way to join the sole network in a building, please contact us first.'
+      }) }}
+
+      <p>You can connect any devices to GovWifi as long as they support WPA2 enterprise wifi and allow users to enter a username and password to connect. This usually includes desktops, laptops, tablets and smartphones, but may not include printers, monitors and speakers.</p>
+
+
+
+
+      <h2 class="govuk-heading-m">Public sector organisations can offer it</h2>
+
+      <p>All UK public sector organisations can offer GovWifi. This means any organisation fully controlled or funded by the UK government. This includes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>central government departments</li>
+        <li>local government</li>
+        <li>emergency services</li>
+        <li>NHS trusts</li>
+        <li>UK embassies and consulates</li>
+      </ul>
+
+      <p>You can see a list of the <a href="#0">organisations that currently offer GovWifi</a>.</p>
+
+      <p>If you're not sure your organisation is eligible, contact us.</p>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Anyone can use it</h2>
+
+      <p>Anyone can connect a device to GovWifi once they have signed up for a username and password. This includes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>public sector workers</li>
+        <li>consultants and contractors</li>
+        <li>members of the public who need to work from public sector buildings - like lawyers and jurors in courts, or private sector workers collaborating with government</li>
+      </ul>
+
+
+
+
+      <h2 class="govuk-heading-m">It's free</h2>
+
+      <p>You do not need to pay to offer, or use GovWifi. The Cabinet Office operates the service and covers the cost of running it to make it simpler to collaborate across government.</p>
+
+      <p>You need to cover the installation and ongoing operating and support costs of the network you’re using GovWifi on.</p>
+
+
+
+
+
+      <h2 class="govuk-heading-m">How it works for your organisation</h2>
+
+      <p>To offer GovWifi, you need to configure your existing wifi infrastructure to support GovWifi and connect to our RADIUS servers and authenticate users.</p>
+
+      <p>You can do this by following our documentation and setting up an account in our self-service admin site.</p>
+
+      <p>Once you’re set up, you need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>advertise GovWifi in your buildings</li>
+        <li>monitor traffic and acceptable use</li>
+        <li>support your users if they have any problems</li>
+        <li>How it works for your users</li>
+        <li>A user can send a text or email to request a username and password.</li>
+      </ul>
+
+      <p>They will receive a randomly generated username and password in reply. They can enter these credentials to connect to the GovWifi network for the first time. They will then automatically connect to GovWifi in all buildings where it’s available.</p>
+
+      <p>They can use those credentials to connect to the wifi on all their devices.</p>
+
+
+
+
+
+      <h2 class="govuk-heading-m">What to expect from the GovWifi service</h2>
+
+      <p>The GovWifi service includes:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the GovWifi authentication service that lets your staff and visitors sign themselves up to use your wifi, which is maintained and improved by the GovWifi team</li>
+        <li>guidance for users on <a href="#0">how to connect to GovWifi</a>, including instructions for different operating systems and common troubleshooting steps</li>
+        <li>this <a href="#0">technical documentation</a>, which covers how to configure your network and hardware to use the authentication service</li>
+        <li>a <a href="#0">self-service admin site</a> where you can manage your IP addresses and locations, and see usage logs</li>
+        <li>a secure process for contacting your users, if you need to investigate misuse of your network or alert them to malware on their devices</li>
+        <li>support for your team managing the GovWifi network - we’re here Monday to Friday and will reply within 1 working day</li>
+        <li>alerts via our <a href="#0">status page</a> if there’s an incident</li>
+      </ul>
+
+
+
+
+
+      <h2 class="govuk-heading-m">What the service does not include</h2>
+
+      <p>The GovWifi team does not provide:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>any hardware</li>
+        <li>onsite help with your network</li>
+        <li>support for GovWifi users in your building if they need help</li>
+      </ul>
+
+
+
+
+      <h2 class="govuk-heading-m">Data protection</h2>
+
+      <p>Information about data protection is set out in a memorandum of understanding that you’ll need to agree to during the onboarding process. You can download and sign it from GovWifi admin.</p>
+
+      <p>We explain data protection information to GovWifi users in our <a href="#0">privacy notice</a>.</p>
+
+
+
+
+      <h2 class="govuk-heading-m">Performance data</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-body-m govuk-!-margin-bottom-1">In the last week:</h2>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="big-number">
+            <span class="big-number__value">
+              100%
+            </span>
+            <span class="govuk-visually-hidden">&nbsp;</span>
+            <span class="big-number__label">
+              Service uptime
+            </span>
+          </div>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <p class="intro-para">
+            <b>80,000</b> people have used the service at least once, <b>20,000</b> have used it to work from multiple locations.
+          </p>
+        </div>
+      </div>
+
+      <div class="data-card govuk-!-margin-top-4">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h2 class="govuk-body-m govuk-!-margin-bottom-1">Since August 2016:</h2>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <div class="big-number">
+              <span class="big-number__value">
+                500k
+              </span>
+              <span class="govuk-visually-hidden">&nbsp;</span>
+              <span class="big-number__label">
+                Registered users
+              </span>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <div class="big-number">
+              <span class="big-number__value">
+                5k
+              </span>
+              <span class="govuk-visually-hidden">&nbsp;</span>
+              <span class="big-number__label">
+                Registered organisations
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Get started</h2>
+
+      <p>Visit our technical documentation to see how to <a href="#0">set up GovWifi</a>.</p>
+
+      <p class="govuk-!-font-weight-bold">Contact us</p>
+      <p>Get in touch with the GovWifi team at <a href="mailto:govwifi-support@digital.cabinet-office.gov.uk">govwifi-support@digital.cabinet-office.gov.uk</a>.</p>
+
+
+
+    </div>
+  </div>
+{% endblock %}
