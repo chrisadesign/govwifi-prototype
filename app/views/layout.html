@@ -36,8 +36,11 @@
 {% from "govuk/components/footer/macro.njk"              import govukFooter -%}
 
 {# MOJ components #}
-{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
-{%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+{% from "moj/components/side-navigation/macro.njk" import mojSideNavigation %}
+{% from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher %}
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -76,12 +79,12 @@
         <nav>
           <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#3">
+              <a class="govuk-header__link" href="support">
                 Support
               </a>
             </li>
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#4">
+              <a class="govuk-header__link" href="#0">
                 Sign out
               </a>
             </li>
@@ -116,7 +119,7 @@
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% block beforeContent %}
-{% if signedIn %}
+{% if status == 'signed-in' %}
   {{ mojOrganisationSwitcher({
     text: 'Government Digital Service',
     link: {

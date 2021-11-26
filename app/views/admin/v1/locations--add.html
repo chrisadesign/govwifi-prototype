@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "locations" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Add a location
+      </h1>
+
+      {{ govukInput({
+        id: 'add-location-address',
+        name: 'add-location-address',
+        label: {
+          html: 'Address',
+          classes: 'govuk-label--s'
+        },
+        hint: {
+          html: 'For example, 10 High Street, London'
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'add-location-postcode',
+        name: 'add-location-postcode',
+        label: {
+          html: 'Postcode',
+          classes: 'govuk-label--s'
+        },
+        classes: 'govuk-input--width-10'
+      }) }}
+
+      {{ govukButton({
+        html: 'Add location',
+        href: 'locations'
+      }) }}
+
+      <p><a href="locations" class="govuk-link--no-visited-state">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}

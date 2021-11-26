@@ -1,0 +1,308 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "locations" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ mojPageHeaderActions({
+        heading: {
+          text: 'Locations',
+          classes: 'govuk-heading-l'
+        },
+        items: [
+          {
+            text: 'Add a location',
+            href: 'locations--add'
+          }
+        ]
+      }) }}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          {{ mojSearch({
+            action: '#',
+            method: 'post',
+            input: {
+              id: 'search',
+              name: 'search'
+            },
+            label: {
+              text: 'Search by location or postcode',
+              classes: 'govuk-label--m govuk-!-margin-bottom-1'
+            },
+            hint: {
+              text: 'For example, ‘SW1A 2AA’ or ‘High Street’'
+            },
+            button: {
+              text: 'Search'
+            }
+          }) }}
+        </div>
+      </div>
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+        The White Chapel Building, E1 8QS
+      </h2>
+      <span class="govuk-caption-m govuk-!-margin-bottom-4">RADIUS secret key: 0DF876E663ABBD62C677</span>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: 'Add IP addresses',
+          classes: 'govuk-button--secondary'
+        }) }}
+        {{ govukButton({
+          text: 'Rotate secret key',
+          classes: 'govuk-button--secondary'
+        }) }}
+        {{ govukButton({
+          text: 'Remove location',
+          classes: 'govuk-button--warning'
+        }) }}
+        {# <a class="govuk-link govuk-link--no-visited-state" href="#">Add IP addresses</a>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Rotate secret key</a>
+        <a class="govuk-link govuk-link--no-visited-state remove-link" href="#">Remove location</a> #}
+      </div>
+
+      {{ govukInsetText({
+        text: 'Add the IP addresses of your authenticators to offer GovWifi at this location.',
+        classes: 'govuk-!-margin-top-0 govuk-!-margin-bottom-9'
+      }) }}
+
+
+
+
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+        The White Chapel Building, E1 8QS
+      </h2>
+      <span class="govuk-caption-m govuk-!-margin-bottom-4">RADIUS secret key: 0DF876E663ABBD62C677</span>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: 'Add IP addresses',
+          classes: 'govuk-button--secondary'
+        }) }}
+        {{ govukButton({
+          text: 'Rotate secret key',
+          classes: 'govuk-button--secondary'
+        }) }}
+        {{ govukButton({
+          text: 'Remove location',
+          classes: 'govuk-button--warning'
+        }) }}
+      </div>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            Receiving traffic
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            100% success rate
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    View logs
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+          	No traffic received
+          </dd>
+          <dd class="govuk-summary-list__value"></dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+        The White Chapel Building, E1 8QS
+      </h2>
+      <span class="govuk-caption-m govuk-!-margin-bottom-4">RADIUS secret key: 0DF876E663ABBD62C677</span>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: 'Add IP addresses',
+          classes: 'govuk-button--secondary'
+        }) }}
+        {{ govukButton({
+          text: 'Rotate secret key',
+          classes: 'govuk-button--secondary'
+        }) }}
+        {{ govukButton({
+          text: 'Remove location',
+          classes: 'govuk-button--warning'
+        }) }}
+      </div>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            Receiving traffic
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            100% success rate
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    View logs
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            Receiving traffic
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            100% success rate
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    View logs
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            Receiving traffic
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            0% success rate
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    View logs
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            Receiving traffic
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            100% success rate
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    View logs
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key tabular govuk-!-width-one-quarter">
+            213.86.153.204
+          </dt>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            Receiving traffic
+          </dd>
+          <dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+            88% success rate
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">
+                    View logs
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link remove-link" href="#">
+                    Remove
+                  </a>
+                </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+
+    </div>
+  </div>
+{% endblock %}

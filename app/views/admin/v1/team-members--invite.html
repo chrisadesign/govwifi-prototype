@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "team-members" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Invite a team member
+      </h1>
+
+      {{ govukInput({
+        id: 'invite-email',
+        name: 'invite-email',
+        label: {
+          html: 'Email address',
+          classes: 'govuk-label--s'
+        }
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: 'invite-permissions',
+        name: 'invite-permissions',
+        fieldset: {
+          legend: {
+            text: 'Permission level',
+            classes: 'govuk-fieldset__legend--s'
+          }
+        },
+        items: [
+          {
+            html: '<span class="govuk-!-font-weight-bold">Administrator</span>',
+            value: 'Administrator',
+            hint: {
+              html: 'View locations and IPs, team members, and logs <br>
+              Manage locations and IPs <br>
+              Add or remove team members
+              '
+            }
+          },
+          {
+            html: '<span class="govuk-!-font-weight-bold">Manage locations</span>',
+            value: 'Manage locations',
+            hint: {
+              html: 'View locations and IPs, team members, and logs <br>
+              Manage locations and IPs <br>
+              Cannot add or remove team members
+              '
+            }
+          },
+          {
+            html: '<span class="govuk-!-font-weight-bold">View only</span>',
+            value: 'View only',
+            hint: {
+              html: 'View locations and IPs, team members, and logs <br>
+              Cannot manage locations and IPs <br>
+              Cannot add or remove team members
+              '
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        html: 'Send invitation email',
+        href: 'team-members--invite2'
+      }) }}
+
+      <p><a href="team-members" class="govuk-link--no-visited-state">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}

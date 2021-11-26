@@ -32,6 +32,24 @@ code {
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// Red links to indicaate destructive nature
+.remove-link {
+  &:link,
+  &:visited {
+    color: #d4351c;
+  }
+
+  &:hover {
+    color: #aa2a16;
+  }
+}
+
+// Tabular override
+.tabular {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .03em;
+}
+
 
 // Match header to live service
 .govuk-header__link--service-name {
@@ -47,6 +65,24 @@ code {
 
 
 
+// Reduce the padding on the main wrapper
+.govuk-main-wrapper--s {
+  @include govuk-media-query ($from: desktop) {
+    padding: govuk-spacing(6) 0
+  }
+}
+
+.govuk-summary-list__actions-list-item {
+  @include govuk-media-query ($from: tablet) {
+    display: block;
+    border: 0!important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
 // Style the footer phase banner
 .govuk-footer .govuk-phase-banner {
   padding: 0 0 20px;
@@ -54,14 +90,6 @@ code {
 }
 
 
-
-// Modify the MOJ side nav
-.moj-side-navigation {
-  position:-webkit-sticky;
-  position:sticky;
-  top:4px;
-  padding: 0 20px 0 0;
-}
 
 .moj-organisation-nav__link:visited {
   color: #1d70b8;

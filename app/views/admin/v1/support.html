@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">Support</h1>
+
+
+      <h2 class="govuk-heading-m">
+        Individual problems
+      </h2>
+      <p class="govuk-!-margin-bottom-2">If an individual user is having trouble connecting to GovWifi:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          direct them to <a href="https://www.wifi.service.gov.uk/connect-to-govwifi/get-help-connecting/">our guidance on common issues</a>
+        </li>
+        <li>
+          <a href="logs">search our logs</a> to confirm they are reaching our service
+        </li>
+        <li>
+          check the<a href="https://status.wifi.service.gov.uk/">GovWifi service status</a>
+        </li>
+      </ul>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Organisation problems
+      </h2>
+
+      <p class="govuk-!-margin-bottom-2">If your entire organisation is having trouble connecting to GovWifi:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          check your <a href="/ips">IP addresses and RADIUS secret keys</a> match your local configuration
+        </li>
+        <li>
+          <a href="/logs/search/new/location">search our logs</a> to confirm traffic from you is reaching our service
+        </li>
+        <li>
+          search <a href="https://docs.wifi.service.gov.uk">our technical documentation</a>
+        </li>
+        <li>
+          check the<a href="https://status.wifi.service.gov.uk/">GovWifi service status</a>
+        </li>
+      </ul>
+
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Request support
+      </h2>
+
+      <p>If you cannot resolve your issue, send us a support request.</p>
+
+      {{ govukTextarea({
+        id: 'support',
+        name: 'support',
+        value: data['support'],
+        rows: '10',
+        label: {
+          text: 'Tell us about your issue'
+        }
+      }) }}
+
+      {{ govukInsetText({
+        text: 'Support tickets are checked daily. You will receive a reply within one working day.'
+      }) }}
+
+      {{ govukButton({
+        text: 'Send support request',
+        href: '#0'
+      }) }}
+
+      
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "settings" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Settings
+      </h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Your account
+      </h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: 'Email address'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            }
+          },
+          {
+            key: {
+              text: 'Password'
+            },
+            value: {
+              text: 'Last changed 4 days ago'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Change',
+                  href: '#'
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Organisation
+      </h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: 'Service email address'
+            },
+            value: {
+              text: 'networks@digital.cabinet-office.gov.uk'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Change',
+                  href: '#'
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: 'Memorandum of understanding (MOU)'
+            },
+            value: {
+              html: 'Not signed <br><span class="govuk-hint">You must sign the MOU to use GovWifi</span>'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Sign MOU',
+                  href: '#'
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        GovWifi servers
+      </h2>
+      <p>The <a href="#0">offer GovWifi documentation</a> explains how to connect your authenticators to these servers.</p>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: 'London'
+            },
+            value: {
+              html: '52.56.55.202<br>52.56.55.128<br>52.56.58.4',
+              classes: 'tabular'
+            }
+          },
+          {
+            key: {
+              text: 'Dublin'
+            },
+            value: {
+              html: '	52.213.32.200<br>52.213.7.48<br>52.212.236.24',
+              classes: 'tabular'
+            }
+          }
+        ]
+      }) }}
+
+
+
+    </div>
+  </div>
+{% endblock %}

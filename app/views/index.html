@@ -8,15 +8,14 @@
         GovWifi prototype
       </h1>
 
-      {{ govukButton({
-        html: 'Admin',
-        href: 'admin/v1/overview'
-      }) }}
-
-      {{ govukButton({
-        html: 'Data',
-        href: 'perf-data/'
-      }) }}
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="admin/" class="govuk-link--no-visited-state">Admin site review</a>
+        </li>
+        <li>
+          <a href="perf-data/" class="govuk-link--no-visited-state">Performance data</a>
+        </li>
+      </ul>
 
     </div>
   </div>

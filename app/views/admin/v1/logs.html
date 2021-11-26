@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "logs" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Logs
+      </h1>
+
+      <p>Logs are kept for recent authentication requests made to the GovWifi service.</p>
+
+
+
+      {% set locationHtml %}
+        {{ govukSelect({
+          id: 'location',
+          name: 'location',
+          label: {
+            html: 'Select location'
+          },
+          items: [
+            {
+              value: 'The White Chapel Building, E1 8QS',
+              text: 'The White Chapel Building, E1 8QS'
+            },
+            {
+              value: 'The White Chapel Building, E1 8QS',
+              text: 'The White Chapel Building, E1 8QS'
+            },
+            {
+              value: 'The White Chapel Building, E1 8QS',
+              text: 'The White Chapel Building, E1 8QS'
+            },
+            {
+              value: 'The White Chapel Building, E1 8QS',
+              text: 'The White Chapel Building, E1 8QS'
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+      {% set usernameHtml %}
+        {{ govukInput({
+          id: 'username',
+          name: 'username',
+          classes: 'govuk-input--width-10',
+          label: {
+            text: 'Enter username'
+          }
+        }) }}
+      {% endset -%}
+
+      {% set ipHtml %}
+        {{ govukInput({
+          id: 'ip-address',
+          name: 'ip-address',
+          classes: 'govuk-input--width-10',
+          label: {
+            text: 'Enter IP address'
+          }
+        }) }}
+      {% endset -%}
+
+
+
+
+      {{ govukRadios({
+        idPrefix: 'logs',
+        name: 'logs',
+        fieldset: {
+          legend: {
+            text: 'How do you want to filter these logs?',
+            classes: 'govuk-fieldset__legend--m'
+          }
+        },
+        items: [
+          {
+            html: 'Location',
+            value: 'Location',
+            conditional: {
+              html: locationHtml
+            }
+          },
+          {
+            html: 'Username',
+            value: 'Username',
+            conditional: {
+              html: usernameHtml
+            }
+          },
+          {
+            html: 'IP address',
+            value: 'IP address',
+            conditional: {
+              html: ipHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        html: 'Show logs',
+        href: 'logs--view'
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

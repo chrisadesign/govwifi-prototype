@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Admin site review
+      </h1>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <p>A review of the admin site with suggested changes.</p>
+
+      <h2 class="govuk-heading-m">
+        Version 1
+      </h2>
+
+      {{ govukButton({
+        text: 'View prototype',
+        href: 'v1/locations'
+      }) }}
+
+      <h3 class="govuk-heading-s">Changes</h3>
+        <p class="govuk-!-margin-bottom-2">General changes:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Changed link to ‘add org’ if only one</li>
+          <li>Removed header links for marketing site</li>
+          <li>Updated side nav to be closer to design system version, adding extra clarity on elected option</li>
+          <li>Removed overview</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Locations&rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Location wide actions into collected buttons</li>
+          <li>Used summary list to bring inline with other areas</li>
+          <li>Moved logs link to actions area of summary list</li>
+          <li>Destructive red links</li>
+          <li>Use inset instead of table for message when no IPs</li>
+          <li>Remove location at any time (rather than just when no IPs)</li>
+          <li>General layout / styles updates</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Add location&rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Cancel action rather than back</li>
+          <li>Label font weight</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Team members&rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Added email address</li>
+          <li>Example layout based on moving to roles rather than permissions (see next section)</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Add team member&rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>V1 shows role based permissions similar to Gov Pay</li>
+          <li>Cancel action rather than back</li>
+          <li>V2 (click send) replace pre-checked-disabled options with hint</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Settings&rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Added email address</li>
+          <li>Tidied layout of summary lists</li>
+          <li>Increased spacing after sections</li>
+          <li>Moved guidance for IPs out of summary list</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Logs &rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Added conditionals in for the radios to reduce steps</li>
+          <li>Inline filter form</li>
+          <li>Status should be capitalised</li>
+          <li>General layout / styles</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-2">Changes to &lsquo;Support&rsquo;:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Broken service status link</li>
+          <li>Width</li>
+          <li>Headings</li>
+          <li>Minor content changes</li>
+        </ul>
+
+
+
+
+
+
+
+
+      {# {% set v1 %}
+        <p class="govuk-!-margin-bottom-2">Two variations of the MVP page:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="v1/performance">no graph</a>
+          </li>
+          <li>
+            <a href="v2/performance">with graph</a>
+          </li>
+        </ul>
+      {% endset %}
+
+      {{ govukAccordion({
+        items: [
+          {
+            heading: { text: 'Version 1' },
+            content: { html: v1 }
+          }
+        ]
+      }) }} #}
+
+    </div>
+  </div>
+{% endblock %}

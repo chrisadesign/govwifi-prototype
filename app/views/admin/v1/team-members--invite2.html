@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "team-members" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Invite a team member
+      </h1>
+
+      {{ govukInput({
+        id: 'invite-email',
+        name: 'invite-email',
+        value: data['invite-email'],
+        classes: '',
+        label: {
+          html: 'Email address',
+          classes: 'govuk-label--s'
+        }
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: 'invite-permissions-2',
+        name: 'invite-permissions-2',
+        classes: '',
+        fieldset: {
+          legend: {
+            text: 'Additional permissions (optional)',
+            classes: 'govuk-fieldset__legend--s'
+          }
+        },
+        hint: {
+          text: 'All users can view locations and IPs, team members, and logs'
+        },
+        items: [
+          {
+            html: 'Add and remove team members',
+            value: 'Add and remove team members'
+          },
+          {
+            html: 'Add and remove locations and IP addresses',
+            value: 'Add and remove locations and IP addresses'
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        html: 'Send invitation email',
+        href: 'team-members'
+      }) }}
+
+      <p><a href="team-members" class="govuk-link--no-visited-state">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}

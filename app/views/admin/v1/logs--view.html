@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "logs" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+        <span class="govuk-caption-l">Found 500 results for:
+        </span>
+        The White Chapel Building, E1 8QS
+      </h1>
+      <p class="govuk-!-margin-bottom-6">
+        <a href="logs" class="govuk-link--no-visited-state">Change search</a>
+      </p>
+
+      {{ govukInsetText({
+        html: '
+          <p>Only logs from your organisation&rsquo;s IP addresses are shown.</p>
+
+          <p>These results include authentication requests for the past 2 weeks.</p>
+
+          <p>Only the 500 most recent logs are shown.</p>
+
+          <p>If you need more logs, <a href="#0">contact us</a>.</p>
+        '
+      }) }}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="moj-search govuk-!-margin-bottom-4">
+            <div class="govuk-form-group">
+              <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="filter">
+                Status type:
+              </label>
+
+              <select name="filter" id="filter" class="govuk-select">
+                <option value="">All</option>
+                <option value="true">Successful</option>
+                <option value="false">Failed</option>
+              </select>
+            </div>
+
+            <button class="govuk-button moj-search__button " data-module="govuk-button">
+              Filter
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Username</th>
+            <th class="govuk-table__header" scope="col">Access Point</th>
+            <th class="govuk-table__header" scope="col">MAC Address</th>
+            <th class="govuk-table__header" scope="col">IP</th>
+            <th class="govuk-table__header" scope="col">Time</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for i in range(1, 20) %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">FGFYJH</td>
+              <td class="govuk-table__cell tabular">70-DB-98-AD-E1-E0</td>
+              <td class="govuk-table__cell tabular">60-F2-62-D0-06-D8</td>
+              <td class="govuk-table__cell tabular">213.86.153.220</td>
+              <td class="govuk-table__cell">2021-11-26 14:13:34 UTC</td>
+              <td class="govuk-table__cell">Successful</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+{% endblock %}

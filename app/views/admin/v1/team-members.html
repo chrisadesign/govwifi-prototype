@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    {% set active = "team-members" %}
+    {% include "./includes/sideNav.html" %}
+
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ mojPageHeaderActions({
+        heading: {
+          text: 'Team members',
+          classes: 'govuk-heading-l'
+        },
+        items: [
+          {
+            text: 'Invite a team member',
+            href: 'team-members--invite'
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Administrators <span class="govuk-hint govuk-!-margin-bottom-0 govuk-!-display-inline-block">(3)</span>
+      </h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              html: 'Chris Armstrong <span class="govuk-hint govuk-!-margin-bottom-0 govuk-!-display-inline-block">(invited)</span>'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Edit permisions',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                },
+                {
+                  text: 'Resend invite',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              html: 'Chris Armstrong <span class="govuk-hint govuk-!-margin-bottom-0 govuk-!-display-inline-block">(you)</span>'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            }
+          },
+          {
+            key: {
+              html: 'Chris Armstrong'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Edit permisions',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                },
+                {
+                  text: 'Resend 2FA',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Manage locations <span class="govuk-hint govuk-!-margin-bottom-0 govuk-!-display-inline-block">(2)</span>
+      </h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              html: 'Chris Armstrong <span class="govuk-hint govuk-!-margin-bottom-0 govuk-!-display-inline-block">(invited)</span>'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Edit permisions',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                },
+                {
+                  text: 'Resend invite',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              html: 'Chris Armstrong'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Edit permisions',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                },
+                {
+                  text: 'Resend 2FA',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+        View only <span class="govuk-hint govuk-!-margin-bottom-0 govuk-!-display-inline-block">(1)</span>
+      </h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              html: 'Chris Armstrong'
+            },
+            value: {
+              text: 'chris.armstrong@xansium.com'
+            },
+            actions: {
+              items: [
+                {
+                  text: 'Edit permisions',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                },
+                {
+                  text: 'Resend invite',
+                  href: '#0',
+                  classes: 'govuk-link--no-visited-state'
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
