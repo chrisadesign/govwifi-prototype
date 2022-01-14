@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Add an organisation to GovWifi
+      </h1>
+
+      {{ govukInput({
+        id: 'org-name',
+        name: 'org-name',
+        label: {
+          html: 'Organisation name',
+          classes: 'govuk-label--s'
+        },
+        hint: {
+          html: 'If your organisation name does not appear below <a href="#0">contact us</a>'
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'org-email',
+        name: 'org-email',
+        label: {
+          html: 'Service email',
+          classes: 'govuk-label--s'
+        },
+        hint: {
+          text: 'A shared and monitored email so we can contact your organisation about GovWifi'
+        }
+      }) }}
+
+
+      {{ govukButton({
+        html: 'Add organisation',
+        href: '#0'
+      }) }}
+
+      <p><a href="javascript:history.back()" class="govuk-link--no-visited-state">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}
